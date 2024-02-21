@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/starlight": "^0.19.1",
     "astro": "^4.3.5",
+    "cwf-lite": "^0.0.2",
+    "modern-normalize": "^2.0.0",
     "sharp": "^0.32.5"
   }
 }

@@ -1,0 +1,38 @@
+---
+import { Code } from "@astrojs/starlight/components";
+
+// export const exampleCode = `console.log('This could come from a file or CMS!');`;
+// export const fileName = "example.js";
+// export const highlights = ["file", "CMS"];
+
+interface Props {
+  code: string;
+  lang: string;
+  example: string;
+}
+
+const { code, lang, example } = Astro.props;
+---
+
+<!-- Component Template (HTML + JS Expressions) -->
+<div class="cwf-example">
+  <div class="cwf-example__inner">
+    <slot />
+  </div>
+  <Code code={code} lang={lang} />
+</div>
+
+<style>
+  .cwf-example {
+    & .cwf-example__inner {
+      border-width: 1px 1px 0;
+      border-style: solid;
+      border-color: var(--sl-color-gray-5);
+      padding: 1rem;
+    }
+
+    & .expressive-code {
+      margin-top: 0 !important;
+    }
+  }
+</style>
