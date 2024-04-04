@@ -1,7 +1,8 @@
 ---
 title: Overview
 description: foobar
-order: 98
+sidebar:
+  order: 1
 ---
 
 Some text ...

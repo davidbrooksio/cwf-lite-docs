@@ -1,7 +1,8 @@
 ---
 title: A test
 description: foobar
-order: 97
+sidebar:
+  order: 2
 ---
 
 Some text ...
