@@ -1,5 +1,5 @@
 {
-  "name": "docs.cwf-lite",
+  "name": "cwf-lite-docs",
   "type": "module",
   "version": "0.0.1",
   "author": "David Brooks <david.brooks@claritas-solutions.com>",
@@ -16,6 +16,6 @@
     "astro": "^4.5.15",
     "cwf-lite": "^0.0.5",
     "modern-normalize": "^2.0.0",
-    "sharp": "^0.33.3"
+    "sharp": "0.32.5"
   }
 }

@@ -4,7 +4,7 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   site: "https://davidbrooksio.github.io",
-  base: "docs.cwf-lite",
+  base: "cwf-lite-docs",
   integrations: [
     starlight({
       title: "CWF Lite",
