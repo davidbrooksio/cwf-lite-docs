@@ -2,6 +2,8 @@
   "name": "docs.cwf-lite",
   "type": "module",
   "version": "0.0.1",
+  "author": "David Brooks <david.brooks@claritas-solutions.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,10 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.19.1",
-    "astro": "^4.3.5",
-    "cwf-lite": "^0.0.2",
+    "@astrojs/starlight": "^0.21.3",
+    "astro": "^4.5.15",
+    "cwf-lite": "^0.0.5",
     "modern-normalize": "^2.0.0",
-    "sharp": "^0.32.5"
+    "sharp": "^0.33.3"
   }
 }

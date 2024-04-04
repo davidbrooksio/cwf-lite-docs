@@ -3,6 +3,8 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://davidbrooksio.github.io",
+  base: "docs.cwf-lite",
   integrations: [
     starlight({
       title: "CWF Lite",
@@ -15,15 +17,24 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: "Guides",
+          label: "Base",
+          collapsed: false,
+          autogenerate: { directory: "bases" },
+        },
+        {
+          label: "Modules",
+          collapsed: false,
           items: [
             // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", link: "/guides/example/" },
+            { label: "Button", link: "/modules/button/" },
           ],
         },
         {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          label: "Utilities",
+          collapsed: false,
+          items: [
+            // Each item here is one entry in the navigation menu.
+          ],
         },
       ],
     }),
