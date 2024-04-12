@@ -4,9 +4,10 @@ import CWFComponent from "./CWFComponent.astro";
 
 interface Props {
   code: string;
+  style: string;
 }
 
-const { code } = Astro.props;
+const { code, style } = Astro.props;
 ---
 
 <!-- Component Template (HTML + JS Expressions) -->
@@ -15,6 +16,7 @@ const { code } = Astro.props;
     <CWFComponent content={code} />
   </div>
   <Code code={code} lang="html" />
+  {style && <Code code={style} lang="css" />}
 </div>
 
 <style>
@@ -28,6 +30,10 @@ const { code } = Astro.props;
 
     & .expressive-code {
       margin-top: 0 !important;
+
+      & + .expressive-code {
+        margin-top: -1px !important;
+      }
     }
   }
 </style>

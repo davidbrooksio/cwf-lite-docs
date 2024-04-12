@@ -29,6 +29,7 @@ export default defineConfig({
           label: "Base",
           collapsed: false,
           items: [
+            { label: "HTML", link: "/base/html/" },
             { label: "Body", link: "/base/body/" },
             { label: "Typogography", link: "/base/typogography/" },
             { label: "Container", link: "/base/container/" },

@@ -1,4 +1,16 @@
 ---
 title: Body
-description: foobar
+description: The body element
 ---
+
+import { Code } from "@astrojs/starlight/components";
+
+export const example1 = `body {
+  background-color: var(--body-background-color, white);
+}`;
+
+The `<body>` has only one css property `background-color`.
+
+### Example
+
+<Code code={example1} lang="css" />

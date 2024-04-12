@@ -23,6 +23,7 @@ const { content } = Astro.props;
      * @private
      */
     private app: HTMLElement | null;
+    private hostStyle: String | null;
 
     /**
      * Constructs a new CWFComponent.
@@ -42,6 +43,14 @@ const { content } = Astro.props;
 
       // Find the element with ID 'app' in the shadow DOM
       this.app = this.shadowRoot?.getElementById("app") as HTMLElement | null;
+
+      this.hostStyle = `:host {
+          background-color: var(--host-background-color, white);
+          color: var(--host-color, DimGrey);
+          font-family: var(--host-font-family, system-ui);
+          font-size: var(--host-font-size, 1rem);
+          line-height: var(--host-line-height, normal);
+        }`;
     }
 
     /**
@@ -89,7 +98,7 @@ const { content } = Astro.props;
     private applyStyle(cssContent: string) {
       // Create a new <style> element
       const styleElement = document.createElement("style");
-      styleElement.textContent = cssContent;
+      styleElement.textContent = `${this.hostStyle}${cssContent}`;
 
       // Remove existing style elements (if any)
       this.shadowRoot?.querySelectorAll("style").forEach((el) => el.remove());

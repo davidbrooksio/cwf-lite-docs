@@ -1,0 +1,18 @@
+---
+title: HTML
+description: The html element
+---
+
+import { Code } from "@astrojs/starlight/components";
+
+export const example1 = `html {
+  color: var(--html-color, DimGrey);
+  font-family: var(--html-font-family, system-ui);
+  font-size: var(--html-font-size, 1rem);
+}`;
+
+We set some basic properties on the `<html>` element.
+
+### Example
+
+<Code code={example1} lang="css" />
