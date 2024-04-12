@@ -18,7 +18,10 @@ export default defineConfig({
           collapsed: false,
           // autogenerate: { directory: "start-here" },
           items: [
-            { label: "Getting Started", link: "/start-here/getting-started/" },
+            {
+              label: "Getting Started",
+              link: "/start-here/getting-started/",
+            },
             { label: "Installation", link: "/start-here/installation/" },
           ],
         },
