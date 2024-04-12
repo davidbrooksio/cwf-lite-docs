@@ -16,8 +16,7 @@
     "@astrojs/starlight": "0.21.5",
     "astro": "4.6.0",
     "cwf-lite": "^0.0.7",
-    "modern-normalize": "^2.0.0",
-    "sharp": "0.33.0"
+    "modern-normalize": "^2.0.0"
   },
   "devDependencies": {}
 }
