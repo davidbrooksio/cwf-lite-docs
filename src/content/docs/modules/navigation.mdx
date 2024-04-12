@@ -1,0 +1,36 @@
+---
+title: Nav
+description: Nav
+---
+
+import CWFCode from "../../../components/CWFCode.astro";
+
+export const example1 = `<nav class="nav">
+  <button class="nav__item" type="button">Click me</button>
+  <button class="nav__item" type="button" data-active="true">Click me</button>
+  <a class="nav__item" href="/">Click me</a>
+</nav>`;
+
+export const example2 = `<nav class="nav nav--stacked">
+  <button class="nav__item" type="button">Click me</button>
+  <button class="nav__item" type="button" data-active="true">Click me</button>
+  <a class="nav__item" href="/">Click me</a>
+</nav>`;
+
+export const example3 = `<nav class="nav nav--tabs">
+  <button class="nav__item" type="button">Click me</button>
+  <button class="nav__item" type="button" data-active="true">Click me</button>
+  <a class="nav__item" href="/">Click me</a>
+</nav>`;
+
+## Basic Navigation
+
+<CWFCode code={example1} />
+
+## Stacked Navigation
+
+<CWFCode code={example2} />
+
+## Tabbed Navigation
+
+<CWFCode code={example3} />

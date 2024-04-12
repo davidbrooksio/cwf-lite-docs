@@ -100,10 +100,10 @@
     sitemap "^7.1.1"
     zod "^3.22.4"
 
-"@astrojs/starlight@^0.21.3":
-  version "0.21.3"
-  resolved "https://registry.yarnpkg.com/@astrojs/starlight/-/starlight-0.21.3.tgz#c63e1872777f00d1ede89a7441cff6bfdcc4958f"
-  integrity sha512-SvIKB8ECR+RhYdTg3bKsTL2e5Yac75eTatfOMGjkp3ced9Bx34xXMSURuKx/AHBWo1X/+WoWzKT3Y3d2y7kkVg==
+"@astrojs/starlight@0.21.5":
+  version "0.21.5"
+  resolved "https://registry.yarnpkg.com/@astrojs/starlight/-/starlight-0.21.5.tgz#c0e2a8f8b5b1d669b67fb008545b344ab13169ca"
+  integrity sha512-cvftxu7DM4C25KGSxqyIk81DiQGX0zx9s5sfmprd1kKQK1h/MQXaRVDCpJrK4SjrgWtpG1UoKLJZBgD5w4k9kw==
   dependencies:
     "@astrojs/mdx" "^2.1.1"
     "@astrojs/sitemap" "^3.0.5"
@@ -122,7 +122,6 @@
     rehype "^13.0.1"
     remark-directive "^3.0.0"
     unified "^11.0.4"
-    unist-util-remove "^4.0.0"
     unist-util-visit "^5.0.0"
     vfile "^6.0.1"
 
@@ -1125,10 +1124,10 @@ astro-expressive-code@^0.33.4:
     hast-util-to-html "^8.0.4"
     remark-expressive-code "^0.33.5"
 
-astro@^4.5.15:
-  version "4.5.15"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-4.5.15.tgz#3b33c86da61abaf310e609c23e50809d97b91f14"
-  integrity sha512-d2+yMv4ZlWwWFzfbpXIULMniNmdPlbwGrQScacEni0WLeo4k7ETO51/bHN/i/fXwxL9IGfasdEFkk2baYXDRog==
+astro@4.5.18:
+  version "4.5.18"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-4.5.18.tgz#04e7dc18c5bd62e0cafacf7bf34f5d29723222dd"
+  integrity sha512-iytLnUfyUneKMjIQdj79zzniByXtcmGNDobIV/gjGsatC9vAyPqeCT8TbMqfkRBMeYGs+S/wCzSoPqaaMJiQnw==
   dependencies:
     "@astrojs/compiler" "^2.7.1"
     "@astrojs/internal-helpers" "0.4.0"
@@ -1597,6 +1596,11 @@ dlv@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/dlv/-/dlv-1.1.3.tgz#5c198a8a11453596e751494d49874bc7732f2e79"
   integrity sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==
+
+document-register-element@^1.14.10:
+  version "1.14.10"
+  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.14.10.tgz#a7bd025e6b73bd827fec2d8e90aba755e99387f5"
+  integrity sha512-w5UA37hEIrs+9pruo2yR5UD13c4UHDlkqqjt4qurnp7QsBI9b1IOi8WXUim+aCqKBsENX3Z/cso7XMOuwJH1Yw==
 
 dset@^3.1.2, dset@^3.1.3:
   version "3.1.3"
@@ -4205,15 +4209,6 @@ unist-util-remove-position@^5.0.0:
   dependencies:
     "@types/unist" "^3.0.0"
     unist-util-visit "^5.0.0"
-
-unist-util-remove@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/unist-util-remove/-/unist-util-remove-4.0.0.tgz#94b7d6bbd24e42d2f841e947ed087be5c82b222e"
-  integrity sha512-b4gokeGId57UVRX/eVKej5gXqGlc9+trkORhFJpu9raqZkZhU0zm8Doi05+HaiBsMEIJowL+2WtQ5ItjsngPXg==
-  dependencies:
-    "@types/unist" "^3.0.0"
-    unist-util-is "^6.0.0"
-    unist-util-visit-parents "^6.0.0"
 
 unist-util-stringify-position@^3.0.0:
   version "3.0.3"

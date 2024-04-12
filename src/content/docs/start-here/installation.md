@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: Installation
 description: foobar
 sidebar:
-  order: 1
+  order: 2
 ---
 
 Some text ...

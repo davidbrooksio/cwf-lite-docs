@@ -1,0 +1,125 @@
+---
+import frameworkStyle from "./../../node_modules/cwf-lite/dist/index.css?raw";
+
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<cwf-component data-content={content} data-style={frameworkStyle}>
+</cwf-component>
+
+<script>
+  /**
+   * Custom web component representing CWFComponent.
+   * @extends HTMLElement
+   */
+  class CWFComponent extends HTMLElement {
+    /**
+     * Reference to the 'app' element within the shadow DOM.
+     * @type {HTMLElement | null}
+     * @private
+     */
+    private app: HTMLElement | null;
+
+    /**
+     * Constructs a new CWFComponent.
+     */
+    constructor() {
+      super();
+
+      // Initialize shadow DOM
+      this.attachShadow({ mode: "open" });
+
+      // Create and populate the component template
+      const template = document.createElement("template");
+      template.innerHTML = `<div id="app"></div>`;
+
+      // Append the template content to the shadow DOM
+      this.shadowRoot?.appendChild(template.content.cloneNode(true));
+
+      // Find the element with ID 'app' in the shadow DOM
+      this.app = this.shadowRoot?.getElementById("app") as HTMLElement | null;
+    }
+
+    /**
+     * Defines which attributes to observe for changes.
+     * @return {string[]} An array of attribute names to observe.
+     * @static
+     */
+    static get observedAttributes() {
+      return ["data-content", "data-style"];
+    }
+
+    /**
+     * Called when the component is added to the DOM.
+     * Performs initial rendering based on attributes.
+     */
+    connectedCallback() {
+      this.render();
+    }
+
+    /**
+     * Called when observed attributes change.
+     * @param {string} attribute - The name of the attribute that changed.
+     * @param {*} _previousValue - The previous value of the attribute (unused).
+     * @param {string} currentValue - The new value of the attribute.
+     */
+    attributeChangedCallback(
+      attribute: string,
+      _previousValue: any,
+      currentValue: string
+    ) {
+      if (attribute === "data-content" && this.app) {
+        this.app.innerHTML = currentValue;
+      }
+
+      if (attribute === "data-style") {
+        this.applyStyle(currentValue);
+      }
+    }
+
+    /**
+     * Applies CSS styles to the component's shadow DOM.
+     * @param {string} cssContent - The CSS content to apply.
+     * @private
+     */
+    private applyStyle(cssContent: string) {
+      // Create a new <style> element
+      const styleElement = document.createElement("style");
+      styleElement.textContent = cssContent;
+
+      // Remove existing style elements (if any)
+      this.shadowRoot?.querySelectorAll("style").forEach((el) => el.remove());
+
+      // Append the new style element to the shadow DOM
+      this.shadowRoot?.appendChild(styleElement);
+    }
+
+    /**
+     * Renders the component based on its attributes.
+     * Updates the 'app' element with 'data-content' attribute and applies initial styles.
+     * @private
+     */
+    private render() {
+      // Update the 'app' element based on 'data-content' attribute
+      if (this.app) {
+        const content = this.getAttribute("data-content");
+        if (content !== null) {
+          this.app.innerHTML = content;
+        }
+      }
+
+      // Apply initial style based on 'data-style' attribute
+      const style = this.getAttribute("data-style");
+      if (style !== null) {
+        this.applyStyle(style);
+      }
+    }
+  }
+
+  // Define the custom element
+  customElements.define("cwf-component", CWFComponent);
+</script>

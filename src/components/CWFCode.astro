@@ -1,25 +1,20 @@
 ---
 import { Code } from "@astrojs/starlight/components";
-
-// export const exampleCode = `console.log('This could come from a file or CMS!');`;
-// export const fileName = "example.js";
-// export const highlights = ["file", "CMS"];
+import CWFComponent from "./CWFComponent.astro";
 
 interface Props {
   code: string;
-  lang: string;
-  example: string;
 }
 
-const { code, lang, example } = Astro.props;
+const { code } = Astro.props;
 ---
 
 <!-- Component Template (HTML + JS Expressions) -->
-<div class="cwf-example">
+<div class="cwf-example not-content">
   <div class="cwf-example__inner">
-    <slot />
+    <CWFComponent content={code} />
   </div>
-  <Code code={code} lang={lang} />
+  <Code code={code} lang="html" />
 </div>
 
 <style>

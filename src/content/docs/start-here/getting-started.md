@@ -1,8 +1,8 @@
 ---
-title: A test
+title: Getting Started
 description: foobar
 sidebar:
-  order: 2
+  order: 1
 ---
 
 Some text ...
