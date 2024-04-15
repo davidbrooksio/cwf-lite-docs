@@ -1,10 +1,27 @@
 ---
 title: Alert
 description: Alert
+lastUpdated: 2024-04-15
 ---
 
 import CWFCode from "../../../components/CWFCode.astro";
 
 export const example1 = `<div class="alert">This is a simple alert.</div>`;
+export const example1Style = `
+.alert {
+  background-color: var(--alert-background-color, white);
+  border-color: var(--alert-border-color, LightGrey);
+  border-radius: var(--alert-border-radius, 0);
+  border-style: var(--alert-border-style, solid);
+  border-width: var(--alert-border-width, 4px 1px 1px 1px);
+  display: var(--alert-display, block);
+  min-width: var(--alert-min-width, 0);
+  padding: var(--alert-padding-y, 3ch) var(--alert-padding-x, 3ch);
+  margin: var(--alert-margin-top, 0) var(--alert-margin-right, auto)
+    var(--alert-margin-bottom, 1ch) var(--alert-margin-left, auto);
+  position: var(--alert-position, relative);
+  word-wrap: var(--alert-word-wrap, break-word);
+}
+`;
 
-<CWFCode code={example1} />
+<CWFCode code={example1} style={example1Style} />

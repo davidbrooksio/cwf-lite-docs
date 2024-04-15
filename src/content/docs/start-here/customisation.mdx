@@ -1,0 +1,72 @@
+---
+title: Customisation
+description: cwf-lite uses css variables with defaults, this means that it will work out for the box (but won't look very good).
+lastUpdated: 2024-04-15
+---
+
+import CWFCode from "../../../components/CWFCode.astro";
+import { Code } from "@astrojs/starlight/components";
+
+_cwf-lite_ uses css variables with defaults, this means that it will work out for the box (but won't look very good). However, should you wish to change a css property you can update the variable in your project css. There are three main ways of doing this:
+
+### In the `:root`
+
+export const example1 = `
+:root {
+  --card-background-color: red;
+}
+`;
+
+<Code code={example1} lang="css" />
+
+### In the css selector
+
+export const example2 = `
+.card {
+  --card-background-color: red;
+}
+`;
+
+<Code code={example2} lang="css" />
+
+### In the css selector as an explicit style (not recommended)
+
+Whilst this approach will work, it's not very modern and is a bit of a blunt instrument.
+
+export const example3 = `
+.card {
+  background-color: red;
+}
+`;
+
+<Code code={example3} lang="css" />
+
+## Adding Styles
+
+You can also build on the basic styles laid out in _cwf-lite_, for example, in your project you might have a css file that adds styles to the basic `.button` class.
+
+export const buttonStyle = `.button {
+  &.button--success {
+    --button-background-color: hsl(141deg 71.3% 47.8%);
+    --button-border-color: hsl(141deg 71.3% 47.8%);
+    --button-color: #fff;
+
+    --button-hover-background-color: hsl(141deg 71.7% 42.9%);
+    --button-hover-border-color: hsl(141deg 71.7% 42.9%);
+    --button-hover-color: #fff;
+
+    --button-focus-background-color: hsl(141deg 71.7% 42.9%);
+    --button-focus-border-color: hsl(141deg 71.7% 42.9%);
+    --button-focus-box-shadow: 0 0 0 0.25em hsl(141deg 71.3% 47.8% / 0.125);
+    --button-focus-color: #fff;
+
+    --button-active-background-color: hsl(141deg 71.7% 42.9%);
+    --button-active-border-color: hsl(141deg 71.7% 42.9%);
+    --button-active-box-shadow: 0 0 0 0.25em hsl(141deg 71.3% 47.8% / 0.25);
+    --button-active-color: #fff;
+  }
+}`;
+
+export const button = `<button class="button button--success" type="button">Click me</button>`;
+
+<CWFCode code={button} style={buttonStyle} override={buttonStyle} />

@@ -5,15 +5,16 @@ import CWFComponent from "./CWFComponent.astro";
 interface Props {
   code: string;
   style: string;
+  override?: string;
 }
 
-const { code, style } = Astro.props;
+const { code, style, override } = Astro.props;
 ---
 
 <!-- Component Template (HTML + JS Expressions) -->
 <div class="cwf-example not-content">
   <div class="cwf-example__inner">
-    <CWFComponent content={code} />
+    <CWFComponent content={code} override={override} />
   </div>
   <Code code={code} lang="html" />
   {style && <Code code={style} lang="css" />}

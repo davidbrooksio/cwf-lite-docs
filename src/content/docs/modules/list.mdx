@@ -1,6 +1,7 @@
 ---
 title: List
 description: List
+lastUpdated: 2024-04-15
 ---
 
 import CWFCode from "../../../components/CWFCode.astro";
@@ -10,6 +11,13 @@ export const example1 = `<ul class="list--unstyled">
   <li>Item</li>
   <li>Item</li>
 </li>`;
+export const example1Style = `
+.list--unstyled {
+  list-style: var(--list-list-style, none);
+  margin: var(--list-margin, 0);
+  padding: var(--list-padding, 0);
+}
+`;
 
 export const example2 = `<ul class="list--unstyled group">
   <li>Item</li>
@@ -19,8 +27,12 @@ export const example2 = `<ul class="list--unstyled group">
 
 ## List Unstyled
 
-<CWFCode code={example1} />
+Using the `.list--unstyled` class you can remove the bullets as well as the browser defined padding and margin for a list.
+
+<CWFCode code={example1} style={example1Style} />
 
 ## List Inline
+
+Adding the [`.group`](/cwf-lite-docs/modules/group/) class results in an inline list.
 
 <CWFCode code={example2} />

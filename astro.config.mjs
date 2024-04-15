@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "CWF Lite",
+      description: "A very lightweight but modern css framework.",
       social: {
         github: "https://github.com/davidbrooksio",
         linkedin: "https://www.linkedin.com/in/davidbrooksio/",
@@ -23,6 +24,9 @@ export default defineConfig({
               link: "/start-here/getting-started/",
             },
             { label: "Installation", link: "/start-here/installation/" },
+            { label: "File structure", link: "/start-here/file-structure/" },
+            { label: "Syntax", link: "/start-here/syntax/" },
+            { label: "Customisation", link: "/start-here/customisation/" },
           ],
         },
         {

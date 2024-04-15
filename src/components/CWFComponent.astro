@@ -3,12 +3,17 @@ import frameworkStyle from "./../../node_modules/cwf-lite/dist/index.css?raw";
 
 interface Props {
   content: string;
+  override?: string;
 }
 
-const { content } = Astro.props;
+const { content, override } = Astro.props;
 ---
 
-<cwf-component data-content={content} data-style={frameworkStyle}>
+<cwf-component
+  data-content={content}
+  data-style={frameworkStyle}
+  data-override={override}
+>
 </cwf-component>
 
 <script>
@@ -18,39 +23,73 @@ const { content } = Astro.props;
    */
   class CWFComponent extends HTMLElement {
     /**
-     * Reference to the 'app' element within the shadow DOM.
-     * @type {HTMLElement | null}
+     * The attribute name for data-content.
+     * @type {string}
      * @private
      */
-    private app: HTMLElement | null;
-    private hostStyle: String | null;
+    private static readonly DATA_CONTENT_ATTRIBUTE = "data-content";
+
+    /**
+     * The attribute name for data-style.
+     * @type {string}
+     * @private
+     */
+    private static readonly DATA_STYLE_ATTRIBUTE = "data-style";
+
+    /**
+     * The attribute name for data-override.
+     * @type {string}
+     * @private
+     */
+    private static readonly DATA_OVERRIDE_ATTRIBUTE = "data-override";
+
+    /**
+     * Reference to the 'app' element within the shadow DOM.
+     * @type {Element | null}
+     * @private
+     */
+    private app: Element | null = null;
+
+    /**
+     * Object containing style information for the component.
+     * @type {{ host: string; code: string; override: string }}
+     * @private
+     */
+    private styles: { host: string; code: string; override: string } = {
+      host: `
+      :host {
+        background-color: var(--host-background-color, white);
+        color: var(--host-color, DimGrey);
+        font-family: var(--host-font-family, system-ui);
+        font-size: var(--host-font-size, 1rem);
+        line-height: var(--host-line-height, normal);
+      }
+    `,
+      code: "",
+      override: "",
+    };
+
+    /**
+     * The <style> element for applying component styles.
+     * @type {HTMLStyleElement | null}
+     * @private
+     */
+    private styleElement: HTMLStyleElement | null = null;
 
     /**
      * Constructs a new CWFComponent.
      */
     constructor() {
       super();
-
-      // Initialize shadow DOM
       this.attachShadow({ mode: "open" });
 
-      // Create and populate the component template
       const template = document.createElement("template");
       template.innerHTML = `<div id="app"></div>`;
-
-      // Append the template content to the shadow DOM
       this.shadowRoot?.appendChild(template.content.cloneNode(true));
 
-      // Find the element with ID 'app' in the shadow DOM
       this.app = this.shadowRoot?.getElementById("app") as HTMLElement | null;
 
-      this.hostStyle = `:host {
-          background-color: var(--host-background-color, white);
-          color: var(--host-color, DimGrey);
-          font-family: var(--host-font-family, system-ui);
-          font-size: var(--host-font-size, 1rem);
-          line-height: var(--host-line-height, normal);
-        }`;
+      this.applyStyle();
     }
 
     /**
@@ -59,7 +98,11 @@ const { content } = Astro.props;
      * @static
      */
     static get observedAttributes() {
-      return ["data-content", "data-style"];
+      return [
+        CWFComponent.DATA_CONTENT_ATTRIBUTE,
+        CWFComponent.DATA_STYLE_ATTRIBUTE,
+        CWFComponent.DATA_OVERRIDE_ATTRIBUTE,
+      ];
     }
 
     /**
@@ -81,30 +124,36 @@ const { content } = Astro.props;
       _previousValue: any,
       currentValue: string
     ) {
-      if (attribute === "data-content" && this.app) {
-        this.app.innerHTML = currentValue;
-      }
-
-      if (attribute === "data-style") {
-        this.applyStyle(currentValue);
+      switch (attribute) {
+        case CWFComponent.DATA_CONTENT_ATTRIBUTE:
+          if (this.app) {
+            this.app.innerHTML = currentValue;
+          }
+          break;
+        case CWFComponent.DATA_STYLE_ATTRIBUTE:
+          this.styles.code = currentValue;
+          this.applyStyle();
+          break;
+        case CWFComponent.DATA_OVERRIDE_ATTRIBUTE:
+          this.styles.override = currentValue;
+          this.applyStyle();
+          break;
       }
     }
 
     /**
      * Applies CSS styles to the component's shadow DOM.
-     * @param {string} cssContent - The CSS content to apply.
+     * If the <style> element does not exist, creates a new one and appends it.
+     * Otherwise, updates the existing <style> element with the latest styles.
      * @private
      */
-    private applyStyle(cssContent: string) {
-      // Create a new <style> element
-      const styleElement = document.createElement("style");
-      styleElement.textContent = `${this.hostStyle}${cssContent}`;
+    private applyStyle() {
+      if (!this.styleElement) {
+        this.styleElement = document.createElement("style");
+        this.shadowRoot?.appendChild(this.styleElement);
+      }
 
-      // Remove existing style elements (if any)
-      this.shadowRoot?.querySelectorAll("style").forEach((el) => el.remove());
-
-      // Append the new style element to the shadow DOM
-      this.shadowRoot?.appendChild(styleElement);
+      this.styleElement.textContent = `${this.styles.host}${this.styles.code}${this.styles.override}`;
     }
 
     /**
@@ -113,18 +162,14 @@ const { content } = Astro.props;
      * @private
      */
     private render() {
-      // Update the 'app' element based on 'data-content' attribute
-      if (this.app) {
-        const content = this.getAttribute("data-content");
-        if (content !== null) {
-          this.app.innerHTML = content;
-        }
+      const content = this.getAttribute(CWFComponent.DATA_CONTENT_ATTRIBUTE);
+      if (this.app && content !== null) {
+        this.app.innerHTML = content;
       }
 
-      // Apply initial style based on 'data-style' attribute
-      const style = this.getAttribute("data-style");
+      const style = this.getAttribute(CWFComponent.DATA_STYLE_ATTRIBUTE);
       if (style !== null) {
-        this.applyStyle(style);
+        this.applyStyle();
       }
     }
   }

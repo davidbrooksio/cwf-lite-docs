@@ -1,0 +1,41 @@
+---
+title: Installation
+description: For best results install via npm or yarn.
+lastUpdated: 2024-04-15
+---
+
+import { Code } from "@astrojs/starlight/components";
+
+## Quick start
+
+For best results install via `npm` or `yarn`:
+
+export const example1 = `
+yarn add cwf-lite --dev
+`;
+
+<Code code={example1} />
+
+export const example2 = `
+npm install cwf-lite -D
+`;
+
+<Code code={example2} />
+
+Once installed, import the source css file from `node_modules/cwf-lite/dist/index.css` into your projects css file:
+
+export const example3 = `
+@import "cwf-lite/dist/index.css";
+`;
+
+<Code code={example3} lang="css" />
+
+If you would rather pick and choose which css files you want to import then you can. Bear in mind that _cwf-lite_ uses postcss meaning that you will need to include this in your build process.
+
+export const example4 = `
+@import "cwf-lite/style/module/alert.css";
+@import "cwf-lite/style/module/input.css";
+@import "cwf-lite/style/utilities/margin.css";
+`;
+
+<Code code={example4} lang="css" />
