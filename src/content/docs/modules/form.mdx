@@ -3,3 +3,33 @@ title: Form Input
 description: Form
 lastUpdated: 2024-04-15
 ---
+
+import cssExample from "cwf-lite/style/modules/form.css";
+import CWFCode from "../../../components/CWFCode.astro";
+import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+
+export const example1 = `<input class="input" type="test" name="input-1" id="input-1" placeholder="Name ..." />`;
+
+<Tabs>
+  <TabItem label="Overview" icon="puzzle">
+    
+    ## Basic input
+
+    <CWFCode code={example1} />
+  </TabItem>
+  <TabItem label="Files" icon="list-format">
+
+  [https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/form.css](https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/form.css)
+  
+    <FileTree>
+
+    - style
+      - modules
+        - **form.css**
+
+    </FileTree>
+  </TabItem>
+  <TabItem label="Stylesheet" icon="open-book">
+    <Code code={cssExample} lang="css" />
+  </TabItem>
+</Tabs>

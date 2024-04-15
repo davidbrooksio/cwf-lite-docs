@@ -3,7 +3,9 @@ title: Typography
 description: Basic typography formatting
 ---
 
+import cssExample from "cwf-lite/style/bases/typography.css";
 import CWFCode from "../../../components/CWFCode.astro";
+import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
 export const example1 = `
 <h1>Heading 1</h1>
@@ -13,48 +15,6 @@ export const example1 = `
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>
 `;
-
-export const example1Style = `
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--heading-font-weight, 600);
-  margin-top: var(--heading-margin-top, 0);
-  margin-bottom: var(--heading-margin-bottom, 1rem);
-}
-
-h1 {
-  font-size: var(--h1-font-size, calc(1.5rem + 0.75vw));
-}
-
-h2 {
-  font-size: var(--h2-font-size, calc(1.375rem + 0.75vw));
-}
-
-h3 {
-  font-size: var(--h3-font-size, calc(1.25rem + 0.75vw));
-}
-
-h4 {
-  font-size: var(--h4-font-size, calc(1rem + 0.75vw));
-}
-
-h5 {
-  font-size: var(--h5-font-size, calc(0.75rem + 0.75vw));
-}
-
-h6 {
-  font-size: var(--h6-font-size, calc(0.5rem + 0.75vw));
-}
-`;
-
-## Headings
-
-<CWFCode code={example1} style={example1Style} />
-
 export const example2 = `
 <p class="h1">Heading 1</p>
 <p class="h2">Heading 2</p>
@@ -63,69 +23,52 @@ export const example2 = `
 <p class="h5">Heading 5</p>
 <p class="h6">Heading 6</p>
 `;
-
-export const example2Style = `
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-weight: var(--heading-font-weight, 600);
-  margin-top: var(--heading-margin-top, 0);
-  margin-bottom: var(--heading-margin-bottom, 1rem);
-}
-
-.h1 {
-  font-size: var(--h1-font-size, calc(1.5rem + 0.75vw));
-}
-
-.h2 {
-  font-size: var(--h2-font-size, calc(1.375rem + 0.75vw));
-}
-
-.h3 {
-  font-size: var(--h3-font-size, calc(1.25rem + 0.75vw));
-}
-
-.h4 {
-  font-size: var(--h4-font-size, calc(1rem + 0.75vw));
-}
-
-.h5 {
-  font-size: var(--h5-font-size, calc(0.75rem + 0.75vw));
-}
-
-.h6 {
-  font-size: var(--h6-font-size, calc(0.5rem + 0.75vw));
-}
-`;
-
-## Headings as classes
-
-<CWFCode code={example2} style={example2Style} />
-
 export const example3 = `
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis magna sit amet luctus tincidunt.</p>
 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam massa dui, interdum porttitor pretium sit amet, tempus et felis. Sed massa magna, cursus et consectetur eu, consectetur vel tellus. Integer vulputate et turpis in facilisis. Praesent a nisi non massa sagittis tincidunt at id magna. Vestibulum iaculis convallis feugiat. Quisque consequat justo quis lectus porttitor, in congue enim luctus.</p>
 <p>Sed augue dolor, rutrum vel facilisis non, ornare in mi. Praesent eget ligula dictum, convallis risus ac, tempor nisi. Integer sed pulvinar mi, nec posuere ante. Aenean interdum finibus viverra.</p>
 `;
-export const example3Style = `p {
-  margin-bottom: var(--paragraph-margin-bottom, 1ch);
-  margin-top: var(--paragraph-margin-top, 0);
-}
-`;
-
-## Paragraphs
-
-<CWFCode code={example3} style={example3Style} />
-
 export const example4 = `<code>console.log("hello");</code>`;
-export const example4Style = `code {
-  color: var(--code-color, DeepPink);
-  font-family: var(--code-font-family, monospace);
-}`;
+export const example5 = `<div style="width: 100px;">
+  <p class="truncate">This is some truncated text.<p>
+</div>`;
 
-## Code
+<Tabs>
+  <TabItem label="Overview" icon="puzzle">
+    
+    ## Headings
 
-<CWFCode code={example4} style={example4Style} />
+    <CWFCode code={example1} />
+
+    ## Headings as classes
+
+    <CWFCode code={example2} />
+
+    ## Paragraphs
+
+    <CWFCode code={example3} />
+
+    ## Code
+
+    <CWFCode code={example4} />
+
+    ## Truncated
+
+    <CWFCode code={example5} />
+  </TabItem>
+  <TabItem label="Files" icon="list-format">
+
+  [https://github.com/davidbrooksio/cwf-lite/blob/master/style/bases/typography.css](https://github.com/davidbrooksio/cwf-lite/blob/master/style/bases/typography.css)
+  
+    <FileTree>
+
+    - style
+      - bases
+        - **typography.css**
+
+    </FileTree>
+  </TabItem>
+  <TabItem label="Stylesheet" icon="open-book">
+    <Code code={cssExample} lang="css" />
+  </TabItem>
+</Tabs>

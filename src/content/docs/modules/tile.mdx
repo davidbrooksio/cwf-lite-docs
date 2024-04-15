@@ -4,7 +4,9 @@ description: Tile
 lastUpdated: 2024-04-15
 ---
 
+import cssExample from "cwf-lite/style/modules/tile.css";
 import CWFCode from "../../../components/CWFCode.astro";
+import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
 export const example1 = `<div class="tile">
   <div class="tile__header">Tile header</div>
@@ -12,4 +14,26 @@ export const example1 = `<div class="tile">
   <div class="tile__footer">Tile footer</div>
 </div>`;
 
-<CWFCode code={example1} />
+<Tabs>
+  <TabItem label="Overview" icon="puzzle">
+    
+    ## Basic tile
+
+    <CWFCode code={example1} />
+  </TabItem>
+  <TabItem label="Files" icon="list-format">
+
+  [https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/tile.css](https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/tile.css)
+  
+    <FileTree>
+
+    - style
+      - modules
+        - **tile.css**
+
+    </FileTree>
+  </TabItem>
+  <TabItem label="Stylesheet" icon="open-book">
+    <Code code={cssExample} lang="css" />
+  </TabItem>
+</Tabs>

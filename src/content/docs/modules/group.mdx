@@ -4,23 +4,36 @@ description: Group
 lastUpdated: 2024-04-15
 ---
 
+import cssExample from "cwf-lite/style/modules/group.css";
 import CWFCode from "../../../components/CWFCode.astro";
+import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
 export const example1 = `<div class="group">
   <div>Item</div>
   <div>Item</div>
   <div>Item</div>
 </div>`;
-export const example1Style = `
-.group {
-  align-items: var(--group-align-items, center);
-  display: var(--group-display, flex);
-  flex-flow: var(--group-flex-flow, wrap row);
-  gap: var(--group-gap, 1ch);
-  justify-content: var(--group-justify-content, flex-start);
-  margin: var(--group-margin, 0);
-  position: var(--group-position, relative);
-}
-`;
 
-<CWFCode code={example1} style={example1Style} />
+<Tabs>
+  <TabItem label="Overview" icon="puzzle">
+    
+    ## Basic group
+
+    <CWFCode code={example1} />
+  </TabItem>
+  <TabItem label="Files" icon="list-format">
+
+  [https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/group.css](https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/group.css)
+  
+    <FileTree>
+
+    - style
+      - modules
+        - **group.css**
+
+    </FileTree>
+  </TabItem>
+  <TabItem label="Stylesheet" icon="open-book">
+    <Code code={cssExample} lang="css" />
+  </TabItem>
+</Tabs>

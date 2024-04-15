@@ -3,3 +3,31 @@ title: Gap
 description: Gap
 lastUpdated: 2024-04-15
 ---
+
+import cssExample from "cwf-lite/style/utilities/gap.css";
+import CWFCode from "../../../components/CWFCode.astro";
+import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+
+export const example1 = `Example incoming ...`;
+
+<Tabs>
+  <TabItem label="Overview" icon="puzzle">
+
+    <CWFCode code={example1} />
+  </TabItem>
+  <TabItem label="Files" icon="list-format">
+
+  [https://github.com/davidbrooksio/cwf-lite/blob/master/style/utilities/gap.css](https://github.com/davidbrooksio/cwf-lite/blob/master/style/utilities/gap.css)
+  
+    <FileTree>
+
+    - style
+      - utilities
+        - **gap.css**
+
+    </FileTree>
+  </TabItem>
+  <TabItem label="Stylesheet" icon="open-book">
+    <Code code={cssExample} lang="css" />
+  </TabItem>
+</Tabs>

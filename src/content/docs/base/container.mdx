@@ -3,52 +3,39 @@ title: Container
 description: A place to put your content
 ---
 
+import cssExample from "cwf-lite/style/bases/container.css";
 import CWFCode from "../../../components/CWFCode.astro";
+import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
-export const example1 = `
-<div class="container">This is some content</div>
-`;
-export const example1Style = `.container {
-  margin-left: var(--container-margin-left, auto);
-  margin-right: var(--container-margin-right, auto);
-  max-width: var(--container-max-width, 100vw);
-  padding-left: var(--container-padding-left, 1ch);
-  padding-right: var(--container-padding-right, 1ch);
-  width: var(--container-width, 100%);
+export const example1 = `<div class="container">This is some content</div>`;
+export const example2 = `<div class="container container--fluid">This is some content</div>`;
 
-    &:not(.container--fluid) {
-    @media (min-width: 576px) {
-      max-width: var(--container-max-width, 516px);
-    }
+<Tabs>
+  <TabItem label="Overview" icon="puzzle">
+    
+    ## Basic container
 
-    @media (min-width: 768px) {
-      max-width: var(--container-max-width, 708px);
-    }
+    <CWFCode code={example1} />
 
-    @media (min-width: 1024px) {
-      max-width: var(--container-max-width, 964px);
-    }
+    ## Fluid container
 
-    @media (min-width: 1216px) {
-      max-width: var(--container-max-width, 1156px);
-    }
+    As you will have seen above, it is possible to add a `.container--fluid` class to your container and it will have a max width of `100vw` regardless of screen size.
 
-    @media (min-width: 1408px) {
-      max-width: var(--container-max-width, 1348px);
-    }
-  }
-}`;
+    <CWFCode code={example2} />
+  </TabItem>
+  <TabItem label="Files" icon="list-format">
 
-## Basic container
+  [https://github.com/davidbrooksio/cwf-lite/blob/master/style/bases/container.css](https://github.com/davidbrooksio/cwf-lite/blob/master/style/bases/container.css)
+  
+    <FileTree>
 
-<CWFCode code={example1} style={example1Style} />
+    - style
+      - bases
+        - **container.css**
 
-## Fluid container
-
-As you will have seen above, it is possible to add a `.container--fluid` class to your container and it will have a max width of `100vw` regardless of screen size.
-
-export const example2 = `
-<div class="container container--fluid">This is some content</div>
-`;
-
-<CWFCode code={example2} />
+    </FileTree>
+  </TabItem>
+  <TabItem label="Stylesheet" icon="open-book">
+    <Code code={cssExample} lang="css" />
+  </TabItem>
+</Tabs>

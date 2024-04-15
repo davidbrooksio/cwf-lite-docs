@@ -4,7 +4,9 @@ description: Nav
 lastUpdated: 2024-04-15
 ---
 
+import cssExample from "cwf-lite/style/modules/nav.css";
 import CWFCode from "../../../components/CWFCode.astro";
+import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
 export const example1 = `<nav class="nav">
   <button class="nav__item" type="button">Click me</button>
@@ -24,14 +26,34 @@ export const example3 = `<nav class="nav nav--tabs">
   <a class="nav__item" href="/">Click me</a>
 </nav>`;
 
-## Basic Navigation
+<Tabs>
+  <TabItem label="Overview" icon="puzzle">
 
-<CWFCode code={example1} />
+    ## Basic Navigation
 
-## Stacked Navigation
+    <CWFCode code={example1} />
 
-<CWFCode code={example2} />
+    ## Stacked Navigation
 
-## Tabbed Navigation
+    <CWFCode code={example2} />
+    
+    ## Tabbed Navigation
 
-<CWFCode code={example3} />
+    <CWFCode code={example3} />
+  </TabItem>
+  <TabItem label="Files" icon="list-format">
+
+  [https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/nav.css](https://github.com/davidbrooksio/cwf-lite/blob/master/style/modules/nav.css)
+  
+    <FileTree>
+
+    - style
+      - modules
+        - **nav.css**
+
+    </FileTree>
+  </TabItem>
+  <TabItem label="Stylesheet" icon="open-book">
+    <Code code={cssExample} lang="css" />
+  </TabItem>
+</Tabs>

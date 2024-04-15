@@ -33,6 +33,7 @@ export default defineConfig({
           label: "Base",
           collapsed: false,
           items: [
+            { label: "Root", link: "/base/root/" },
             { label: "HTML", link: "/base/html/" },
             { label: "Body", link: "/base/body/" },
             { label: "Typogography", link: "/base/typogography/" },
