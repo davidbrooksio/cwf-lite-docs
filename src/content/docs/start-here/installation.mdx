@@ -22,10 +22,10 @@ npm install cwf-lite -D
 
 <Code code={example2} />
 
-Once installed, import the source css file from `node_modules/cwf-lite/dist/index.css` into your projects css file:
+Once installed, import the source css file from `node_modules/cwf-lite/dist/index.css?raw` into your projects css file:
 
 export const example3 = `
-@import "cwf-lite/dist/index.css";
+@import "cwf-lite/dist/index.css?raw";
 `;
 
 <Code code={example3} lang="css" />
@@ -33,9 +33,9 @@ export const example3 = `
 If you would rather pick and choose which css files you want to import then you can. Bear in mind that _cwf-lite_ uses postcss meaning that you will need to include this in your build process.
 
 export const example4 = `
-@import "cwf-lite/style/module/alert.css";
-@import "cwf-lite/style/module/input.css";
-@import "cwf-lite/style/utilities/margin.css";
+@import "cwf-lite/style/module/alert.css?raw";
+@import "cwf-lite/style/module/input.css?raw";
+@import "cwf-lite/style/utilities/margin.css?raw";
 `;
 
 <Code code={example4} lang="css" />
