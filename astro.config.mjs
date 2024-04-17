@@ -1,11 +1,13 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://davidbrooksio.github.io",
   base: "/cwf-lite-docs",
   integrations: [
+    sitemap(),
     starlight({
       title: "CWF Lite",
       description: "A very lightweight but modern css framework.",
