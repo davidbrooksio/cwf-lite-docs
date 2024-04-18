@@ -1,7 +1,7 @@
 ---
 title: Syntax
 description: cwf lite uses a basic bem syntax for css.
-lastUpdated: 2024-04-15
+lastUpdated: 2024-04-18
 ---
 
 import { Code } from "@astrojs/starlight/components";
@@ -40,7 +40,21 @@ export const example2 = `
 
 <Code code={example2} lang="html" />
 
-Further information on BEM can be found at [https://css-tricks.com/bem-101/](https://css-tricks.com/bem-101/)
+Further information on BEM can be found at [BEM 101](https://css-tricks.com/bem-101/)
 
 ## CSS variables
 
+_cwf-lite_ uses css variables with default fallbacks such as:
+
+export const example3 = `
+.elementclass {
+  background-color: var(--element-background-color, white);
+}
+`;
+
+<Code code={example3} lang="css" />
+
+In this example, the browser would first look to see if a variable of `--element-background-color` has been set.
+if it has then that is what will be shown, if it hasn't then the `background-color` will fallback to `white`.
+
+For more information on css variables take a look at [Using CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)

@@ -1,7 +1,7 @@
 ---
 title: Installation
 description: For best results install via npm or yarn.
-lastUpdated: 2024-04-15
+lastUpdated: 2024-04-18
 ---
 
 import { Code } from "@astrojs/starlight/components";
@@ -22,20 +22,38 @@ npm install cwf-lite -D
 
 <Code code={example2} />
 
-Once installed, import the source css file from `node_modules/cwf-lite/dist/index.css?raw` into your projects css file:
+### Import
+
+Once installed, import the source css file from `node_modules/cwf-lite/dist/index.css` into your projects css file:
 
 export const example3 = `
-@import "cwf-lite/dist/index.css?raw";
+@import "cwf-lite/dist/index.css";
 `;
 
 <Code code={example3} lang="css" />
 
+<hr />
+
+## Advanced
+
+### Import individual css files
+
 If you would rather pick and choose which css files you want to import then you can. Bear in mind that _cwf-lite_ uses postcss meaning that you will need to include this in your build process.
 
 export const example4 = `
-@import "cwf-lite/style/module/alert.css?raw";
-@import "cwf-lite/style/module/input.css?raw";
-@import "cwf-lite/style/utilities/margin.css?raw";
+@import "cwf-lite/style/module/alert.css";
+@import "cwf-lite/style/module/input.css";
+@import "cwf-lite/style/utilities/margin.css";
 `;
 
 <Code code={example4} lang="css" />
+
+### Importing in JavaScript
+
+If you really wanted you could import the uncompiled css into your JavaScript. You would still need to include postcss in your package.
+
+export const example5 = `
+import "cwf-lite/style.css";
+`;
+
+<Code code={example5} lang="css" />

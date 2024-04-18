@@ -7,10 +7,60 @@ import cssExample from "cwf-lite/style/bases/grid.css?raw";
 import CWFCode from "../../../components/CWFCode.astro";
 import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
+export const example1 = `
+<div class="container container--fluid">
+  <div class="grid column-gap--5 row-gap--4">
+    <div class="column column-start--1 column-span--3">
+      <div class="card">
+        <section class="card__body">
+          <code>.column.column-start--1.column-span--3</code>
+        </section>
+      </div>
+    </div>
+    <div class="column column-start--md-4 column-span--md-3">
+      <div class="card">
+        <section class="card__body">
+          <code>.column.column-start--md-4.column-span--md-3</code>
+        </section>
+      </div>
+    </div>
+    <div
+      class="column column-start--md-8 column-span--md-5 column-start--xl-9 column-span--xl-4"
+    >
+      <div class="card">
+        <section class="card__body">
+          <code>
+            .column.column-start--md-8.column-span--md-5.column-start--xl-9.column-span--xl-4
+          </code>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 <Tabs>
   <TabItem label="Overview" icon="puzzle">
 
-    More coming...
+    The 12 column grid system is probably the most complex part of _cwf-lite_.
+    There are two grid formats, one using css grid and one using flexbox, you should choose which one you want to use based on your specific requirments.
+
+    ### Why 12 columns?
+
+    Because it divides easily into a variety of patterns. You can split it in half for two even columns, or into thirds, or fourths.
+    It also supports some irregular or asymmetrical layouts.
+
+    In short, it's really flexible.
+
+    <hr />
+
+    ## CSS Grid
+
+    <CWFCode code={example1} lang="html" />
+
+    In this example we declare what grid system we are using by adding the `grid` class to the parent element. We have also added a column and row gap for aesthetic reasons.
+
+    
 
   </TabItem>
   <TabItem label="Files" icon="list-format">
