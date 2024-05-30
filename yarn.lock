@@ -1851,10 +1851,10 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-cwf-lite@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/cwf-lite/-/cwf-lite-1.0.4.tgz#c0b183ea0451dcaa7a46d9731b79fd47ce215b18"
-  integrity sha512-70+o4Hur4GG2So2kEcdeqPPrMBI5UtTOvn/ZMAF6DjsyAf+axFGMU5YMWqUTnJk/QFfpx5aR6oVPvpNPpc9R+g==
+cwf-lite@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/cwf-lite/-/cwf-lite-1.0.5.tgz#bf9bc5948bc4a43e7d9f6ad1406a4fc78403aad8"
+  integrity sha512-mcgZOlqiSSaQRGggEG3J3BKrs+0rpE+O57ch6yez/g5++jLAc/od3F99d5ZB38GQGbexR2NGQHAYYtrTzBuO6A==
   dependencies:
     modern-normalize "^2.0.0"
     postcss "^8.4.38"
