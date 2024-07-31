@@ -23,12 +23,12 @@ export default defineConfig({
           items: [
             {
               label: "Getting Started",
-              link: "/start-here/getting-started/",
+              link: "/",
             },
-            { label: "Installation", link: "/start-here/installation/" },
-            { label: "File structure", link: "/start-here/file-structure/" },
-            { label: "Syntax", link: "/start-here/syntax/" },
-            { label: "Customisation", link: "/start-here/customisation/" },
+            { label: "Installation", link: "/installation/" },
+            { label: "File structure", link: "/file-structure/" },
+            { label: "Syntax", link: "/syntax/" },
+            { label: "Customisation", link: "/customisation/" },
           ],
         },
         {
