@@ -18,5 +18,8 @@
     "astro": "4.15.2",
     "cwf-lite": "^1.0.92",
     "modern-normalize": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
   }
 }
