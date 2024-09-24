@@ -48,13 +48,13 @@ _cwf-lite_ uses css variables with default fallbacks such as:
 
 export const example3 = `
 .elementclass {
-  background-color: var(--element-background-color, white);
+  background: var(--element-background, white);
 }
 `;
 
 <Code code={example3} lang="css" />
 
-In this example, the browser would first look to see if a variable of `--element-background-color` has been set.
-if it has then that is what will be shown, if it hasn't then the `background-color` will fallback to `white`.
+In this example, the browser would first look to see if a variable of `--element-background` has been set.
+if it has then that is what will be shown, if it hasn't then the `background` will fallback to `white`.
 
 For more information on css variables take a look at [Using CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)

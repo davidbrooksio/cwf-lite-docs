@@ -14,7 +14,7 @@ However, should you wish to change a css property you can update the variable in
 
 export const example1 = `
 .elementclass {
-  --element-background-color: red;
+  --element-background: red;
 }
 `;
 
@@ -24,7 +24,7 @@ export const example1 = `
 
 export const example2 = `
 :root {
-  --element-background-color: red;
+  --element-background: red;
 }
 `;
 
@@ -38,7 +38,7 @@ export const example2 = `
 
 export const example3 = `
 .element {
-  background-color: red;
+  background: red;
 }
 `;
 
@@ -50,21 +50,21 @@ You can also build on the basic styles laid out in _cwf-lite_, for example, in y
 
 export const buttonStyle = `.button {
   &.button--success {
-    --button-background-color: hsl(141deg 71.3% 47.8%);
+    --button-background: hsl(141deg 71.3% 47.8%);
     --button-border-color: hsl(141deg 71.3% 47.8%);
     --button-border-radius: 2rem;
     --button-color: #fff;
 
-    --button-hover-background-color: hsl(141deg 71.7% 42.9%);
+    --button-hover-background: hsl(141deg 71.7% 42.9%);
     --button-hover-border-color: hsl(141deg 71.7% 42.9%);
     --button-hover-color: #fff;
 
-    --button-focus-background-color: hsl(141deg 71.7% 42.9%);
+    --button-focus-background: hsl(141deg 71.7% 42.9%);
     --button-focus-border-color: hsl(141deg 71.7% 42.9%);
     --button-focus-box-shadow: 0 0 0 0.25em hsl(141deg 71.3% 47.8% / 0.125);
     --button-focus-color: #fff;
 
-    --button-active-background-color: hsl(141deg 71.7% 42.9%);
+    --button-active-background: hsl(141deg 71.7% 42.9%);
     --button-active-border-color: hsl(141deg 71.7% 42.9%);
     --button-active-box-shadow: 0 0 0 0.25em hsl(141deg 71.3% 47.8% / 0.25);
     --button-active-color: #fff;
