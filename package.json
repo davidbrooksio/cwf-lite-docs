@@ -13,10 +13,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.1.6",
+    "@astrojs/sitemap": "3.2.0",
     "@astrojs/starlight": "0.28.2",
-    "astro": "4.15.10",
-    "cwf-lite": "^1.1.1",
+    "astro": "4.15.11",
+    "cwf-lite": "^1.1.2",
     "modern-normalize": "^3.0.1"
   },
   "devDependencies": {
