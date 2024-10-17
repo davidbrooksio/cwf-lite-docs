@@ -1938,9 +1938,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:4.16.4":
-  version: 4.16.4
-  resolution: "astro@npm:4.16.4"
+"astro@npm:4.16.6":
+  version: 4.16.6
+  resolution: "astro@npm:4.16.6"
   dependencies:
     "@astrojs/compiler": "npm:^2.10.3"
     "@astrojs/internal-helpers": "npm:0.4.1"
@@ -2010,7 +2010,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/3da2c1fd39ac11600f2dc2018025da3acf0357e7db6559ccdce21c366afc9715a9e8985e239384fba831c958dda09fe12c20baf90f3b7e38851b955c90566ed7
+  checksum: 10c0/f5f768a6b8451c7e1ac4244fa007391ece569ca3f8359cac910765752fc4f0b2d3d73c9bc850eb4afbe6999cef08429179f0d305955bed35ec5441b2a3d073d2
   languageName: node
   linkType: hard
 
@@ -2431,7 +2431,7 @@ __metadata:
   dependencies:
     "@astrojs/sitemap": "npm:3.2.1"
     "@astrojs/starlight": "npm:0.28.3"
-    astro: "npm:4.16.4"
+    astro: "npm:4.16.6"
     cwf-lite: "npm:^1.1.2"
     modern-normalize: "npm:^3.0.1"
     typescript: "npm:^5.6.3"
