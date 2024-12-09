@@ -1995,20 +1995,21 @@ __metadata:
     "@astrojs/sitemap": "npm:3.2.1"
     "@astrojs/starlight": "npm:0.29.2"
     astro: "npm:4.16.16"
-    cwf-lite: "npm:^1.2.2"
+    cwf-lite: "npm:^1.2.3"
     modern-normalize: "npm:^3.0.1"
     typescript: "npm:^5.7.2"
   languageName: unknown
   linkType: soft
 
-"cwf-lite@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "cwf-lite@npm:1.2.2"
+"cwf-lite@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "cwf-lite@npm:1.2.3"
   dependencies:
     modern-normalize: "npm:^3.0.1"
     postcss: "npm:^8.4.49"
     postcss-each: "npm:^1.1.0"
-  checksum: 10c0/7ac5be20aced7fba719aabf46a2771f20a82d2ecbd3d582e59a8e587588bc09e4c54bd3e34c2d83d7faea5654d2509c83506ea13221756dfb3dc2c5904decb92
+    postcss-nested: "npm:^7.0.2"
+  checksum: 10c0/10e3bd189a3027cb672f76b147ef8d6d97ea8fc2e904f4caf2d425bc445636373de5b240121ba65e5cfeab87d807263e438bfb97c338f2c37d9983ac2723f355
   languageName: node
   linkType: hard
 
@@ -4552,6 +4553,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-nested@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "postcss-nested@npm:7.0.2"
+  dependencies:
+    postcss-selector-parser: "npm:^7.0.0"
+  peerDependencies:
+    postcss: ^8.2.14
+  checksum: 10c0/b467f328c89c5b0dcd1b569ae083f6163235c0cac09494a0b284eef5275fa1386bbc26c66c85adf194cef0a65d315994140724a34539a096e5acd39d9c753338
+  languageName: node
+  linkType: hard
+
 "postcss-selector-parser@npm:^6.1.1":
   version: 6.1.2
   resolution: "postcss-selector-parser@npm:6.1.2"
@@ -4559,6 +4571,16 @@ __metadata:
     cssesc: "npm:^3.0.0"
     util-deprecate: "npm:^1.0.2"
   checksum: 10c0/523196a6bd8cf660bdf537ad95abd79e546d54180f9afb165a4ab3e651ac705d0f8b8ce6b3164fb9e3279ce482c5f751a69eb2d3a1e8eb0fd5e82294fb3ef13e
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "postcss-selector-parser@npm:7.0.0"
+  dependencies:
+    cssesc: "npm:^3.0.0"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 10c0/e96e096afcce70bf5c97789f5ea09d7415ae5eb701d82b05b5e8532885d31363b484fcb1ca9488c9a331f30508d9e5bb6c3109eb2eb5067ef3d3919f9928cd9d
   languageName: node
   linkType: hard
 
