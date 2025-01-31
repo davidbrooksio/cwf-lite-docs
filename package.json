@@ -15,7 +15,7 @@
   "dependencies": {
     "@astrojs/sitemap": "3.2.1",
     "@astrojs/starlight": "0.31.1",
-    "astro": "5.1.8",
+    "astro": "5.2.2",
     "cwf-lite": "^1.2.3",
     "modern-normalize": "^3.0.1",
     "typescript": "^5.7.3"
