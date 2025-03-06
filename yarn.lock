@@ -1698,20 +1698,20 @@ __metadata:
     "@astrojs/sitemap": "npm:3.2.1"
     "@astrojs/starlight": "npm:0.32.2"
     astro: "npm:5.4.2"
-    cwf-lite: "npm:^1.2.5"
+    cwf-lite: "npm:^1.2.6"
     modern-normalize: "npm:^3.0.1"
     typescript: "npm:^5.8.2"
   languageName: unknown
   linkType: soft
 
-"cwf-lite@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "cwf-lite@npm:1.2.5"
+"cwf-lite@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "cwf-lite@npm:1.2.6"
   dependencies:
     modern-normalize: "npm:^3.0.1"
     postcss: "npm:^8.5.3"
     postcss-each: "npm:^1.1.0"
-  checksum: 10c0/5a1f8faf5c1cac96e4da8b1429b7d2b93c75816182102c541042c4563d4b21cdfc211e59a216f3a885e92b43c65d0f20894c302041b9291a8287c3c0e6747e40
+  checksum: 10c0/e45197778bc3d46f59ed00262963bb674b6a282bc7929b4691c1c841b5f99577c3f1b0e3aba2b07600e08ac3fb34c37e4fc59b5e3b77ead48d4ecbad2c027e84
   languageName: node
   linkType: hard
 
