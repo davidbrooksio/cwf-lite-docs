@@ -16,7 +16,7 @@
     "@astrojs/sitemap": "^3.3.0",
     "@astrojs/starlight": "^0.32.3",
     "astro": "^5.5.3",
-    "cwf-lite": "^1.3.0",
+    "cwf-lite": "^1.3.1",
     "modern-normalize": "^3.0.1",
     "typescript": "^5.8.2"
   }

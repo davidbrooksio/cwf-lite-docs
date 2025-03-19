@@ -8,7 +8,94 @@ import cssExample from "cwf-lite/style/modules/form.css?raw";
 import CWFCode from "../../../components/CWFCode.astro";
 import { Code, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
-export const example1 = `<input class="input" type="test" name="input-1" id="input-1" placeholder="Name ..." />`;
+export const example1 = 
+  `
+  <label class="label" for="text">Text</label>
+  <input class="input" type="text" id="text" placeholder="Text …" />
+
+  <label class="label" for="disabled">Disabled</label>
+  <input class="input" type="text" id="disabled" placeholder="Disabled …" disabled />
+
+  <label class="label" for="email">Email</label>
+  <input class="input" type="email" id="email" placeholder="Email …" />
+
+  <label class="label" for="tel">tel</label>
+  <input class="input" type="tel" id="tel" placeholder="tel …" />
+
+  <label class="label" for="url">Url</label>
+  <input class="input" type="url" id="url" placeholder="Url …" />
+
+  <label class="label" for="number">Number</label>
+  <input class="input" type="number" id="number" placeholder="Number …" />
+
+  <label class="label" for="search">Search</label>
+  <input class="input" type="search" id="search" placeholder="Search …" />
+
+  <label class="label" for="password">Password</label>
+  <input class="input" type="password" id="password" placeholder="Password …" />
+
+  <label class="label" for="select">Select</label>
+  <select class="input" id="select">
+    <option value="">Select a role</option>
+    <option value="developer">Developer</option>
+    <option value="designer">Designer</option>
+    <option value="manager">Manager</option>
+  </select>
+
+  <label class="label" for="multiple">Multiple</label>
+  <select class="input" id="multiple" multiple>
+    <option value="">Select a role</option>
+    <option value="developer">Developer</option>
+    <option value="designer">Designer</option>
+    <option value="manager">Manager</option>
+  </select>
+
+  <label class="label" for="textarea">Textarea</label>
+  <textarea class="input" id="textarea" rows="4" placeholder="Textarea …"></textarea>
+
+  <label class="label" for="radio">Radio</label>
+  <input class="input" type="radio" id="radio" />
+
+  <label class="label" for="checkbox">Checkbox</label>
+  <input class="input" type="checkbox" id="checkbox" />
+
+  <label class="label" for="color">Colour</label>
+  <input class="input" type="color" id="color" placeholder="Color …" />
+
+  <label class="label" for="date">Date</label>
+  <input class="input" type="date" id="date" placeholder="Date …" />
+
+  <label class="label" for="datetime-local">Datetime local</label>
+  <input class="input" type="datetime-local" id="datetime-local" placeholder="Datetime local …" />
+
+  <label class="label" for="month">Month</label>
+  <input class="input" type="month" id="month" placeholder="Month …" />
+
+  <label class="label" for="week">Week</label>
+  <input class="input" type="week" id="week" placeholder="Week …" />
+
+  <label class="label" for="time">Time</label>
+  <input class="input" type="time" id="time" placeholder="Time …" />
+
+  <label class="label" for="file">File</label>
+  <input class="input" type="file" id="file" placeholder="File …" />
+
+  <label class="label" for="range">Range</label>
+  <input class="input" type="range" id="range" placeholder="Range …" />
+
+  <label class="label" for="output">Output</label>
+  <output class="input" id="output" for="range"></output>
+
+  <label for="datalist" class="label">Datalist</label>
+  <input class="input" list="options" id="datalist" placeholder="Type to search..." />
+  <datalist id="options">
+    <option value="San Francisco"></option>
+    <option value="New York"></option>
+    <option value="Seattle"></option>
+    <option value="Los Angeles"></option>
+    <option value="Chicago"></option>
+  </datalist>
+  `;
 
 <Tabs>
   <TabItem label="Overview" icon="puzzle">

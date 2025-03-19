@@ -39,6 +39,8 @@ export default defineConfig({
             { label: "HTML", link: "/base/html/" },
             { label: "Body", link: "/base/body/" },
             { label: "Typogography", link: "/base/typogography/" },
+            { label: "Horizontal rule", link: "/base/hr/" },
+            { label: "Link", link: "/base/link/" },
             { label: "Container", link: "/base/container/" },
             { label: "Grid System", link: "/base/grid/" },
           ],

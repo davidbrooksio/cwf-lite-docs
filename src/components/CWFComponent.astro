@@ -58,6 +58,17 @@ const { content, override } = Astro.props;
     private styles: { host: string; code: string; override: string } = {
       host: `
       :host {
+        --size-0: 0;
+        --size-1: 0.25ch;
+        --size-2: 0.5ch;
+        --size-3: 1ch;
+        --size-4: 1.5ch;
+        --size-5: 2ch;
+        --size-6: 2.5ch;
+        --size-7: 3ch;
+        --size-8: 3.5ch;
+        --size-9: 4ch;
+
         background-color: var(--host-background-color, white);
         color: var(--host-color, DimGrey);
         font-family: var(--host-font-family, system-ui);
