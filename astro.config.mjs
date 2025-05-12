@@ -11,10 +11,18 @@ export default defineConfig({
     starlight({
       title: "CWF Lite",
       description: "A very lightweight but modern css framework.",
-      social: {
-        github: "https://github.com/davidbrooksio",
-        linkedin: "https://www.linkedin.com/in/davidbrooksio/",
-      },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/davidbrooksio",
+        },
+        {
+          icon: "linkedin",
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/in/davidbrooksio/",
+        },
+      ],
       sidebar: [
         {
           label: "Start here",
