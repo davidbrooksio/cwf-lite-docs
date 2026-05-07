@@ -1,5 +1,5 @@
 ---
-import frameworkStyle from "./../../node_modules/cwf-lite/dist/index.css?raw";
+import frameworkStyle from "cwf-lite/dist/index.css?raw";
 
 interface Props {
   content: string;
@@ -13,8 +13,7 @@ const { content, override } = Astro.props;
   data-content={content}
   data-style={frameworkStyle}
   data-override={override}
->
-</cwf-component>
+/>
 
 <script>
   /**
@@ -121,7 +120,18 @@ const { content, override } = Astro.props;
      * Performs initial rendering based on attributes.
      */
     connectedCallback() {
-      this.render();
+      // Sync internal state with attributes in case they were set before connection
+      this.styles.code =
+        this.getAttribute(CWFComponent.DATA_STYLE_ATTRIBUTE) || "";
+      this.styles.override =
+        this.getAttribute(CWFComponent.DATA_OVERRIDE_ATTRIBUTE) || "";
+
+      const content = this.getAttribute(CWFComponent.DATA_CONTENT_ATTRIBUTE);
+      if (this.app && content) {
+        this.app.innerHTML = content;
+      }
+
+      this.applyStyle();
     }
 
     /**
@@ -133,7 +143,7 @@ const { content, override } = Astro.props;
     attributeChangedCallback(
       attribute: string,
       _previousValue: any,
-      currentValue: string
+      currentValue: string,
     ) {
       switch (attribute) {
         case CWFComponent.DATA_CONTENT_ATTRIBUTE:
@@ -159,12 +169,19 @@ const { content, override } = Astro.props;
      * @private
      */
     private applyStyle() {
+      if (!this.shadowRoot) return; // Guard clause
+
       if (!this.styleElement) {
         this.styleElement = document.createElement("style");
-        this.shadowRoot?.appendChild(this.styleElement);
+        this.shadowRoot.appendChild(this.styleElement);
       }
 
-      this.styleElement.textContent = `${this.styles.host}${this.styles.code}${this.styles.override}`;
+      // Ensure we are getting the latest values from attributes if state is lost
+      const code = this.getAttribute(CWFComponent.DATA_STYLE_ATTRIBUTE) || "";
+      const override =
+        this.getAttribute(CWFComponent.DATA_OVERRIDE_ATTRIBUTE) || "";
+
+      this.styleElement.textContent = `${this.styles.host}${code}${override}`;
     }
 
     /**

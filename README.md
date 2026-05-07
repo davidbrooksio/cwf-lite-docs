@@ -6,8 +6,8 @@ A very lightweight but modern css framework.
 
 ## Status
 
-![Current version](https://badgen.net/badge/Version/1.5.6/green)
-![CSS size](https://badgen.net/badge/CSS%20size/268.84%20kB/yellow)
+![Current version](https://badgen.net/badge/Version/1.5.7/green)
+![CSS size](https://badgen.net/badge/CSS%20size/268.79%20kB/yellow)
 ![CSS gzip size](https://badgen.net/badge/CSS%20gzip%20size/24.07%20kB/green)
 
 ## Quick start
