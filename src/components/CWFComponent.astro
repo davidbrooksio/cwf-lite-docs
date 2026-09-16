@@ -176,7 +176,12 @@ const { content, override } = Astro.props;
       }
 
       // Ensure we are getting the latest values from attributes if state is lost
-      const code = this.getAttribute(CWFComponent.DATA_STYLE_ATTRIBUTE) || "";
+      // `:root` never matches inside a shadow tree, so rewrite it to `:host`
+      // so the framework's root-level custom properties (colors, breakpoints,
+      // control sizing, etc.) actually apply within this component.
+      const code = (
+        this.getAttribute(CWFComponent.DATA_STYLE_ATTRIBUTE) || ""
+      ).replace(/:root/g, ":host");
       const override =
         this.getAttribute(CWFComponent.DATA_OVERRIDE_ATTRIBUTE) || "";
 
