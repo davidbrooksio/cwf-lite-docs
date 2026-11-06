@@ -12,7 +12,8 @@ const { content, override } = Astro.props;
 <cwf-component
   data-content={content}
   data-style={frameworkStyle}
-  data-override={override}></cwf-component>
+  data-override={override}
+></cwf-component>
 
 <script>
   /**
@@ -141,7 +142,7 @@ const { content, override } = Astro.props;
      */
     attributeChangedCallback(
       attribute: string,
-      _previousValue: any,
+      _previousValue: string | null,
       currentValue: string,
     ) {
       switch (attribute) {
