@@ -2,7 +2,7 @@
   "name": "cwf-lite-docs",
   "description": "The documentation website for the cwf-lite css framework",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.6.4",
   "author": "David Brooks <david.brooks@claritas-solutions.com>",
   "license": "MIT",
   "scripts": {
